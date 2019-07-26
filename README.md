@@ -1,7 +1,8 @@
 ##  简介
 
-btc-scan是一个用go语言实现的比特币钱包服务，旨在为比特币钱包客户端提供发起交易，查询UTXO，查询历史交易记录等接口。其基本原理是从全节点同步并解析交易数据，保存到本地leveldb数据库。
-详细的设计思路见 [《如何设计一个比特币钱包服务》](https://github.com/liyue201/btc-wallet-service-design)
+btc-scan是一个用go语言实现的比特币钱包服务，旨在为比特币钱包客户端提供发起交易，查询UTXO，查询历史交易记录等接口。其基本原理是从全节点同步并解析交易数据，保存到本地leveldb数据库。  
+
+详细的设计思路见 [《如何设计一个比特币钱包服务》](https://github.com/liyue201/btc-wallet-service-design)。
 
 ## 部署
 

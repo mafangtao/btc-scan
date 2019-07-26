@@ -31,8 +31,8 @@
 {
   "data": {
   },
-  "code":40002
-  "message": "请求参数不正确"
+  "code":40002,
+  "message":"请求参数不正确"
 }
 ```
 
@@ -178,7 +178,7 @@
     	        "amount":10000000,
     	        "scriptPubKey":""
     	    }]
-	    }
+	    },
 	    "message": "Success",
 	    "code": 0
 	}
@@ -228,7 +228,7 @@ rawtx=0100000002D23658D4E039799FFE6C3EC1290C3A0DB8F7A21EAB77C272317843F61EDB3A81
 	{
 	    "data": {
 	        "txid":""
-	    }
+	    },
 	    "message": "Success",
 	    "code": 0
 	}

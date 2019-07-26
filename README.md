@@ -29,3 +29,11 @@ docker-compose up -d
 ## API文档
 
 详见 [《API文档》](/docs/api.md)
+
+### 欢迎打赏
+
+走过路过的大佬，如果这对你帮助，请往这扔几个铜板
+
+- BTC: 16L9w2vMn8XSFV7Ytar2LzHEsdDp3w9gM3  
+- ETH: 0xE00a72aFb1890Bc4d0dcf2561aB26099cACEcD87  
+- EOS: eosbetkiller  

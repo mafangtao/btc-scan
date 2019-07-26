@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+//protoc --go_out=plugins=grpc:. schemas.proto
+
+package models;
+
+//key:  utxo-{addr}-{Transaction.id}-{Transaction.vout}
+message Utxo {
+    string  txId            = 1;
+    uint32  vout            = 2;
+    int64   amount          = 3;
+    string  scriptPubKey    = 4;
+}
+
+//key:  addr-{Addr.addr}
+//message Addr {
+//    int64       id          = 1;    //自增id
+//    string      addr        = 2;    //地址
+//}
+
+//context
+//key:  context
+message Context {
+    int64               blockHeight      = 1;   // 当前处理的区块高度
+    string              blockHash        = 2;   // 当前处理的区块hash
+    int32               blockTotalTx     = 3;   // 当前区块的交易数
+    int32               BlockProcessedTx = 4;   // 当前区块已经处理的交易数
+    int64               totalTx          = 5;   // 总共的交易数
+    int64               totalTxNode      = 6;   //
+}
+
+message TxInput {
+    string  txId    = 1;    //上一笔交易id
+    uint32  vout    = 2;    //上一笔交易输出的idx
+    string  addr    = 3;    //通过查询获得
+    int64   amount  = 4;    //通过查询获得
+}
+
+message TxOutput {
+    string  addr         = 1;
+    int64   amount       = 2;
+    uint32  vout         = 3;
+    string  scriptPubKey = 4;
+}
+
+//key:  tx-{Transaction.txId}
+message Transaction {
+    int64   id                  = 1; //自增di
+    string  txId                = 2;
+    int64   blockTime           = 3;
+    string  blockHash           = 4;
+    int64   blockHeight         = 5;
+    repeated TxInput inputs     = 6;
+    repeated TxOutput outputs   = 7;
+}
+
+//key: txnode-{addr}-{TxNode.id}
+message TxNode{
+    int64  id           = 1;    //自增di
+    string txId         = 2;
+    uint32 type         = 3;    //1-intput 2-output  3-intput|output
+}

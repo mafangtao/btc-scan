@@ -1,0 +1,5 @@
+#/bin/bash
+#use go1.9.6
+
+go build  -o ./scan ../main.go
+go build  -o ./tool ../tool/main.go

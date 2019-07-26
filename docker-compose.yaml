@@ -1,0 +1,27 @@
+version: '3'
+services:
+   btc_scan:
+     image: "btc-scan:latest"
+     restart: unless-stopped
+     depends_on:
+       - btcd
+     ports:
+       - "8888:8888"
+     volumes:
+      - ./data/btc-scan-data:/var/data
+      - ./output/configs/scan.yml:/app/configs/scan.yml
+      - ./output/configs/btcd/rpc.cert:/app/configs/btc-rpc.cert
+     entrypoint: /server/btc-scan -C /app/configs/scan.yml
+     container_name: "btc_scan"
+   btcd:
+     image: "lnzap/btcd:latest"
+     restart: unless-stopped
+     ports:
+        - "6001:6001"
+     volumes:
+         -  ./data/btcd:/root/.btcd
+         - ./output/configs/btcd/btcd.conf:/root/.btcd/btcd.conf
+         - ./output/configs/btcd/rpc.cert:/root/.btcd/rpc.cert
+         - ./output/configs/btcd/rpc.key:/root/.btcd/rpc.key
+     entrypoint: btcd
+     container_name: "btcd"

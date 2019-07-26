@@ -1,0 +1,12 @@
+name: btc-scan
+btcnode:
+    network: mainnet
+    address: btcd:6001
+    user: test
+    password: afiuhfio897321rf3fge
+    certificate: ./configs/btcd/rpc.cert
+    mempool: 100000
+leveldb:
+    path: "/var/data"
+rest:
+    port: 8888
